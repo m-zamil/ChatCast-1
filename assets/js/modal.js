@@ -1,6 +1,7 @@
 // Get modal trigger buttons and close buttons
 const openModalButtons = document.querySelectorAll(".openModalButton");
 const closeModalButtons = document.querySelectorAll(".closeModalButton");
+let lastFocusedButton = null;
 
 // Function to open the modal by ID
 function openModal(modalId) {
@@ -11,16 +12,25 @@ function openModal(modalId) {
   modal.querySelector(".modal__content").focus(); // Set focus to modal content
 }
 
+function moveFocus() {
+  if (lastFocusedButton) {
+    lastFocusedButton.focus();
+  }
+  console.log(lastFocusedButton);
+}
+
 // Function to close the modal
 function closeModal(modal) {
   modal.style.display = "none";
   modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = ""; // Restore background scrolling
+  moveFocus();
 }
 
 // Open modal event delegation
 openModalButtons.forEach((button) => {
   button.addEventListener("click", (e) => {
+    lastFocusedButton = e.target;
     const modalId = e.target.getAttribute("data-modal");
     openModal(modalId);
   });
@@ -50,27 +60,4 @@ document.addEventListener("keydown", (e) => {
       closeModal(visibleModal);
     }
   }
-});
-
-// Return focus to the button that triggered the modal when closing
-const modalTriggerButtons = document.querySelectorAll(".openModalButton");
-modalTriggerButtons.forEach((button) => {
-  button.addEventListener("focus", (e) => {
-    // Store button reference for focus return when closing the modal
-    e.target._lastFocusedButton = e.target;
-  });
-});
-
-// Focus management: Return focus to the last focused button when modal closes
-closeModalButtons.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    const modal = e.target.closest(".modal");
-    closeModal(modal);
-
-    // Return focus to the last focused button
-    const triggerButton = modal.querySelector("[data-modal]");
-    if (triggerButton && triggerButton._lastFocusedButton) {
-      triggerButton._lastFocusedButton.focus();
-    }
-  });
 });
