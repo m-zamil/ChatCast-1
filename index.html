@@ -274,7 +274,76 @@
                 </div>
                 <!-- Templates Content ====================== -->
                 <div class="tabs__pane" id="templates">
-                  <p>Templates content goes here...</p>
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb__item">Templates</li>
+                      <li class="breadcrumb__item">Template 1</li>
+                      <li class="breadcrumb__item">Configuration</li>
+                      <li class="breadcrumb__item">Preview</li>
+                    </ol>
+                  </nav>
+                  <div class="templates__content">
+                    <ul class="templates__lists" style="display: none">
+                      <li>Template 1</li>
+                      <li>Template 2</li>
+                      <li>Template 3</li>
+                      <li>Template 4</li>
+                      <li>Template 5</li>
+                      <li>New Template</li>
+                    </ul>
+                    <div class="template">
+                      <div class="template__header">
+                        <h3>Template 1</h3>
+                        <button class="template__config-btn">
+                          <img src="./assets/images/config.svg" alt="" />
+                        </button>
+                      </div>
+                      <div class="upload__group__wrapper">
+                        <!-- Image Upload -->
+                        <div class="upload__group">
+                          <label for="imageUpload">Image</label>
+                          <div id="imagePreview" class="file-list"></div>
+                          <div class="upload-box" id="imageUploadBox">Upload file</div>
+                          <input type="file" id="imageUpload" class="hidden-input" accept="image/*" multiple />
+                        </div>
+
+                        <!-- Music Upload -->
+                        <div class="upload__group">
+                          <label for="musicUpload">Music</label>
+                          <div id="musicPreview" class="file-list"></div>
+                          <div class="upload-box" id="musicUploadBox">Upload file</div>
+                          <input type="file" id="musicUpload" class="hidden-input" accept="audio/*" multiple />
+                        </div>
+
+                        <!-- Video Upload -->
+                        <div class="upload__group">
+                          <label for="videoUpload">Background Video</label>
+                          <div id="videoPreview" class="file-list"></div>
+                          <div class="upload-box" id="videoUploadBox">Upload file</div>
+                          <input type="file" id="videoUpload" class="hidden-input" accept="video/*" multiple />
+                        </div>
+                      </div>
+                      <!-- Font and Color Selection -->
+                      <div class="controls">
+                        <div>
+                          <label>Font</label>
+                          <select>
+                            <option>Select font</option>
+                            <option>Arial</option>
+                            <option>Times New Roman</option>
+                            <option>Verdana</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label>Color</label>
+                          <input type="text" value="#000000" />
+                        </div>
+                      </div>
+
+                      <!-- Next Button -->
+                      <button class="next-btn">Next</button>
+                    </div>
+                  </div>
                 </div>
                 <!-- Videocasts Content ====================== -->
                 <div class="tabs__pane" id="videocasts">
@@ -373,5 +442,6 @@
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/modal.js"></script>
     <script src="./assets/js/tabs.js"></script>
+    <script src="./assets/js/upload-files.js"></script>
   </body>
 </html>

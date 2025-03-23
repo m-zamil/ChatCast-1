@@ -70,17 +70,15 @@
 .modal[aria-hidden="false"] .modal__content {
   transform: translateY(0);
 }
-.modal--plans .plans__card {
-  background-color: #f3f3f3;
-}
+
 .modal--plans .modal__content__wrapper {
   max-width: 1200px;
 }
 
 .close__btn {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 32px;
+  right: 32px;
   background: none;
   border: none;
   cursor: pointer;
