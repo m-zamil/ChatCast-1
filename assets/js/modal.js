@@ -16,7 +16,6 @@ function moveFocus() {
   if (lastFocusedButton) {
     lastFocusedButton.focus();
   }
-  console.log(lastFocusedButton);
 }
 
 // Function to close the modal
@@ -31,6 +30,7 @@ function closeModal(modal) {
 openModalButtons.forEach((button) => {
   button.addEventListener("click", (e) => {
     lastFocusedButton = e.target;
+    console.log(e.target);
     const modalId = e.target.getAttribute("data-modal");
     openModal(modalId);
   });
@@ -60,4 +60,10 @@ document.addEventListener("keydown", (e) => {
       closeModal(visibleModal);
     }
   }
+});
+
+/* ============== Account Management =============== */
+const plansModalOpenButton = document.getElementById("plansModalButton");
+plansModalOpenButton.addEventListener("click", function () {
+  openModal("plansModal");
 });
