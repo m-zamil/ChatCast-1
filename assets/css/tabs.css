@@ -366,24 +366,33 @@
 
 .templates__window {
   display: none;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s, transform 0.3s;
 }
 .templates__window.active {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ===== Template ==== */
-.template__header {
+.window__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #646464;
   padding-bottom: 24px;
   margin-bottom: 24px;
+  padding-left: 16px;
 }
-.template__header h3 {
+.window__header h3 {
   font-size: 24px;
   font-weight: 500;
   line-height: 1;
+}
+.window__content {
+  padding: 0 24px;
 }
 
 .upload__group__wrapper {
@@ -614,4 +623,48 @@ input[type="checkbox"]:checked::before {
 }
 .preview__box > * {
   border-radius: 16px;
+}
+/*========================== Contributors Content CSS ==================== */
+.contributors__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contributors__list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+}
+.contributors__list-item:nth-child(even) {
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+.contributor__name {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.contributor__number {
+  color: #808080;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  margin-left: 16px;
+}
+.invite-btn {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 100%;
+  color: #fff;
+  background: #737373;
+  border-radius: 8px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 32px auto 0;
+}
+.invite-btn::before {
+  content: url("../images/plus-1.svg");
 }

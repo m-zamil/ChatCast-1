@@ -21,14 +21,9 @@ let currentWindow = 0;
 const windows = document.querySelectorAll(".templates__window");
 
 function navigate(windowIndex) {
-  // Hide current window with animation
   windows[currentWindow].classList.remove("active");
-
-  // Show new window with animation
   currentWindow = windowIndex;
   windows[currentWindow].classList.add("active");
-
-  // updateBreadcrumbs();
 }
 navigate(0);
 
