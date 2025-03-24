@@ -16,3 +16,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+/* ============= Tempalte Windows switching ============ */
+let currentWindow = 0;
+const windows = document.querySelectorAll(".templates__window");
+
+function navigate(windowIndex) {
+  // Hide current window with animation
+  windows[currentWindow].classList.remove("active");
+
+  // Show new window with animation
+  currentWindow = windowIndex;
+  windows[currentWindow].classList.add("active");
+
+  // updateBreadcrumbs();
+}
+navigate(0);
+
+/* Template names click */
+document.querySelectorAll(".templates__lists li").forEach((item) => {
+  item.addEventListener("click", function () {
+    navigate(1);
+  });
+});

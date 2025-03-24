@@ -274,24 +274,30 @@
                 </div>
                 <!-- Templates Content ====================== -->
                 <div class="tabs__pane" id="templates">
-                  <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb__item">Templates</li>
-                      <li class="breadcrumb__item">Template 1</li>
-                      <li class="breadcrumb__item">Configuration</li>
-                      <li class="breadcrumb__item">Preview</li>
-                    </ol>
-                  </nav>
                   <div class="templates__content">
-                    <ul class="templates__lists" style="display: none">
-                      <li>Template 1</li>
-                      <li>Template 2</li>
-                      <li>Template 3</li>
-                      <li>Template 4</li>
-                      <li>Template 5</li>
-                      <li>New Template</li>
-                    </ul>
-                    <div class="template">
+                    <div class="templates__window">
+                      <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb__item active" onclick="navigate(0)">Templates</li>
+                        </ol>
+                      </nav>
+                      <ul class="templates__lists">
+                        <li>Template 1</li>
+                        <li>Template 2</li>
+                        <li>Template 3</li>
+                        <li>Template 4</li>
+                        <li>Template 5</li>
+                        <li>New Template</li>
+                      </ul>
+                    </div>
+                    <!-- ========== Template 1 ========== -->
+                    <div class="template templates__window">
+                      <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb__item" onclick="navigate(0)">Templates</li>
+                          <li class="breadcrumb__item active" onclick="navigate(1)">Template 1</li>
+                        </ol>
+                      </nav>
                       <div class="template__header">
                         <h3>Template 1</h3>
                         <button class="template__config-btn">
@@ -301,7 +307,7 @@
                       <div class="upload__group__wrapper">
                         <!-- Image Upload -->
                         <div class="upload__group">
-                          <label for="imageUpload">Image</label>
+                          <label for="imageUpload" class="input__label-title">Image</label>
                           <div id="imagePreview" class="file-list"></div>
                           <div class="upload-box" id="imageUploadBox">Upload file</div>
                           <input type="file" id="imageUpload" class="hidden-input" accept="image/*" multiple />
@@ -309,7 +315,7 @@
 
                         <!-- Music Upload -->
                         <div class="upload__group">
-                          <label for="musicUpload">Music</label>
+                          <label for="musicUpload" class="input__label-title">Music</label>
                           <div id="musicPreview" class="file-list"></div>
                           <div class="upload-box" id="musicUploadBox">Upload file</div>
                           <input type="file" id="musicUpload" class="hidden-input" accept="audio/*" multiple />
@@ -317,31 +323,195 @@
 
                         <!-- Video Upload -->
                         <div class="upload__group">
-                          <label for="videoUpload">Background Video</label>
+                          <label for="videoUpload" class="input__label-title">Background Video</label>
                           <div id="videoPreview" class="file-list"></div>
                           <div class="upload-box" id="videoUploadBox">Upload file</div>
                           <input type="file" id="videoUpload" class="hidden-input" accept="video/*" multiple />
                         </div>
                       </div>
                       <!-- Font and Color Selection -->
-                      <div class="controls">
-                        <div>
-                          <label>Font</label>
-                          <select>
-                            <option>Select font</option>
-                            <option>Arial</option>
-                            <option>Times New Roman</option>
-                            <option>Verdana</option>
-                          </select>
+                      <div class="input__row">
+                        <div class="input-field">
+                          <label for="font" class="input__label-title">Font</label>
+                          <div class="select__wrapper">
+                            <select id="font">
+                              <option disabled hidden selected>Select font</option>
+                              <option>Arial</option>
+                              <option>Times New Roman</option>
+                              <option>Verdana</option>
+                            </select>
+                          </div>
                         </div>
-                        <div>
-                          <label>Color</label>
-                          <input type="text" value="#000000" />
+                        <div class="input-field">
+                          <label for="color" class="input__label-title">Color</label>
+                          <input id="color" type="text" placeholder="#000000" />
                         </div>
                       </div>
 
                       <!-- Next Button -->
-                      <button class="next-btn">Next</button>
+
+                      <button class="template__btn" onclick="navigate(2)">Next</button>
+                    </div>
+                    <!-- ========== Configuration ========== -->
+                    <div class="configuration templates__window" id="configuration">
+                      <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb__item" onclick="navigate(0)">Templates</li>
+                          <li class="breadcrumb__item" onclick="navigate(1)">Template 1</li>
+                          <li class="breadcrumb__item active" onclick="navigate(2)">Configuration</li>
+                        </ol>
+                      </nav>
+                      <div class="template__header">
+                        <h3>Configuration</h3>
+                        <button class="template__config-btn">
+                          <img src="./assets/images/config.svg" alt="" />
+                        </button>
+                      </div>
+                      <!-- Font and Color Selection -->
+                      <div class="input__label-title">Text Setting</div>
+                      <div class="input__row">
+                        <div class="input-field">
+                          <label for="text-color">Text Font color</label>
+                          <input id="text-color" type="text" placeholder="#000000" />
+                        </div>
+                        <div class="input__row">
+                          <div class="input-field">
+                            <label for="text-position-x">Text Position X</label>
+                            <input id="text-position-x" type="text" placeholder="100" />
+                          </div>
+                          <div class="input-field">
+                            <label for="text-color">Text Font color</label>
+                            <input id="text-color" type="text" placeholder="#000000" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="input__row">
+                        <div class="input-field">
+                          <label for="text-content">Text Content</label>
+                          <input id="text-content" type="text" placeholder="Placeholder" />
+                        </div>
+                        <div class="input__row">
+                          <div class="input-field">
+                            <label for="font-name">Font Name</label>
+                            <div class="select__wrapper">
+                              <select id="font-name">
+                                <option selected>Arial</option>
+                                <option>Times New Roman</option>
+                                <option>Verdana</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="input-field">
+                            <label for="font-size">Font Size</label>
+                            <div class="select__wrapper">
+                              <select id="font-size">
+                                <option selected>18</option>
+                                <option>20</option>
+                                <option>24</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="input__label-title">Caption Setting</div>
+                      <div class="input__row">
+                        <div class="input-field">
+                          <label for="text-color">Text Font color</label>
+                          <input id="text-color" type="text" placeholder="#000000" />
+                        </div>
+                        <div class="input__row">
+                          <div class="input-field">
+                            <label for="text-position-x">Text Position X</label>
+                            <input id="text-position-x" type="text" placeholder="100" />
+                          </div>
+                          <div class="input-field">
+                            <label for="text-color">Text Font color</label>
+                            <input id="text-color" type="text" placeholder="#000000" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="input__row">
+                        <div class="input-field">
+                          <label for="text-content">Text Content</label>
+                          <input id="text-content" type="text" placeholder="Placeholder" />
+                        </div>
+                        <div class="input__row">
+                          <div class="input-field">
+                            <label for="font-name">Caption Font Name</label>
+                            <div class="select__wrapper">
+                              <select id="font-name">
+                                <option selected>Arial</option>
+                                <option>Times New Roman</option>
+                                <option>Verdana</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="input-field">
+                            <label for="font-size">Caption Font size</label>
+                            <div class="select__wrapper">
+                              <select id="font-size">
+                                <option selected>18</option>
+                                <option>20</option>
+                                <option>24</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="input__row">
+                        <div class="input-field">
+                          <label for="caption-border-style">Caption Border Style</label>
+                          <div class="select__wrapper">
+                            <select id="caption-border-style">
+                              <option selected>solid</option>
+                              <option>dotted</option>
+                              <option>dashed</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="input-field">
+                          <label for="caption-alignment">Caption Alignment</label>
+                          <div class="select__wrapper">
+                            <select id="caption-alignment">
+                              <option selected>Bottom</option>
+                              <option>Top</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="input-field">
+                          <label for="caption-shadow">Caption Shadow</label>
+                          <input type="number" placeholder="0" />
+                        </div>
+                      </div>
+                      <div class="checkbox-field">
+                        <input type="checkbox" name="caption styles enabled" id="caption-style-enabled" checked />
+                        <label for="caption-style-enabled">Caption Border Style</label>
+                      </div>
+                      <div class="template__btns">
+                        <button class="template__btn" onclick="navigate(1)">Cancel</button>
+                        <button class="template__btn template__btn--black" onclick="navigate(3)">Preview</button>
+                      </div>
+                    </div>
+                    <!-- ========== Preview ========== -->
+                    <div class="preview templates__window" id="preview">
+                      <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb__item" onclick="navigate(0)">Templates</li>
+                          <li class="breadcrumb__item" onclick="navigate(1)">Template 1</li>
+                          <li class="breadcrumb__item" onclick="navigate(2)">Configuration</li>
+                          <li class="breadcrumb__item active" onclick="navigate(3)">Preview</li>
+                        </ol>
+                      </nav>
+                      <div class="template__header">
+                        <h3>Preview</h3>
+                      </div>
+                      <div class="preview__box">
+                        <video src="" width="692" height="357"></video>
+                      </div>
+                      <div class="template__btns">
+                        <button class="template__btn" onclick="navigate(2)">Back</button>
+                        <button class="template__btn template__btn--black">Publish</button>
+                      </div>
                     </div>
                   </div>
                 </div>
