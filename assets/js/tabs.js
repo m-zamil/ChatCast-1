@@ -27,9 +27,38 @@ function navigate(windowIndex) {
 }
 navigate(0);
 
-/* Template names click */
-document.querySelectorAll(".templates__lists li").forEach((item) => {
+/* ============= Contributors Windows switching ============ */
+let currentWindowCont = 0;
+const windowsCont = document.querySelectorAll(".contributors__window");
+
+function navigateCont(windowIndex) {
+  windowsCont[currentWindowCont].classList.remove("active");
+  currentWindowCont = windowIndex;
+  windowsCont[currentWindowCont].classList.add("active");
+}
+navigateCont(0);
+
+/* ============= Projects Windows switching ============ */
+let currentWindowProj = 0;
+const windowsProj = document.querySelectorAll(".projects__window");
+
+function navigateProj(windowIndex) {
+  windowsProj[currentWindowProj].classList.remove("active");
+  currentWindowProj = windowIndex;
+  windowsProj[currentWindowProj].classList.add("active");
+}
+navigateProj(0);
+
+/* Template names click: for demo purpose */
+document.querySelectorAll(".templates__lists li").forEach((item, i) => {
   item.addEventListener("click", function () {
     navigate(1);
+  });
+});
+
+/* Projects names click: for demo purpose */
+document.querySelectorAll(".projects__lists li").forEach((item, i) => {
+  item.addEventListener("click", function () {
+    navigateProj(1);
   });
 });

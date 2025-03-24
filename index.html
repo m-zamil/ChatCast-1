@@ -524,37 +524,156 @@
                 <!-- Projects Content ====================== -->
                 <div class="tabs__pane" id="projects">
                   <div class="projects__content">
-                    <nav aria-label="breadcrumb">
-                      <ol class="breadcrumb">
-                        <li class="breadcrumb__item active" onclick="navigate(0)">Projects</li>
-                      </ol>
-                    </nav>
-                    <ul class="projects__lists">
-                      <li>
-                        <div>
-                          <h3>Project 1</h3>
-                          <p>Lorem ipsum laoreet vel sit pretium nulla vitae quis id non curabitur eget ornare ac.</p>
+                    <div class="projects__window">
+                      <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb__item active" onclick="navigateProj(0)">Projects</li>
+                        </ol>
+                      </nav>
+                      <ul class="projects__lists">
+                        <li>
+                          <div>
+                            <h3>Project 1</h3>
+                            <p>Lorem ipsum laoreet vel sit pretium nulla vitae quis id non curabitur eget ornare ac.</p>
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <h3>Project 2</h3>
+                            <p>Lorem ipsum laoreet vel sit pretium nulla vitae quis id non curabitur eget ornare ac.</p>
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <h3>Project 3</h3>
+                            <p>Lorem ipsum laoreet vel sit pretium nulla vitae quis id non curabitur eget ornare ac.</p>
+                          </div>
+                        </li>
+                        <li>New Template</li>
+                      </ul>
+                    </div>
+                    <div class="projects__window">
+                      <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb__item" onclick="navigateProj(0)">Projects</li>
+                          <li class="breadcrumb__item">Projects 1</li>
+                        </ol>
+                      </nav>
+                      <div class="window__header">
+                        <h3>Project 1</h3>
+                        <button>
+                          <img src="./assets/images/config.svg" alt="" />
+                        </button>
+                      </div>
+                      <ul class="episodes__list">
+                        <li>Episode 1</li>
+                        <li>Episode 2</li>
+                        <li>Episode 3</li>
+                      </ul>
+                      <button class="episode__btn" onclick="navigateProj(2)">Add Episode</button>
+                    </div>
+                    <div class="projects__window">
+                      <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb__item" onclick="navigateProj(0)">Projects</li>
+                          <li class="breadcrumb__item" onclick="navigateProj(1)">Projects 1</li>
+                          <li class="breadcrumb__item">Episode 1</li>
+                        </ol>
+                      </nav>
+                      <div class="window__header">
+                        <h3>Episode 1</h3>
+                        <button>
+                          <img src="./assets/images/config.svg" alt="" />
+                        </button>
+                      </div>
+                      <div class="projects__content">
+                        <div class="input__row">
+                          <div class="input-field">
+                            <label for="template-id" class="input__label-title">Template</label>
+                            <div class="select__wrapper">
+                              <select id="template-id">
+                                <option disabled hidden selected>Select Template</option>
+                                <option>Template 1</option>
+                                <option>Template 2</option>
+                                <option>Template 3</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="or">or</div>
+                          <div class="upload__group__wrapper">
+                            <!-- Image Upload -->
+                            <div class="upload__group">
+                              <label for="imageAudioUpload" class="input__label-title">Image</label>
+                              <div id="imagePreview" class="file-list"></div>
+                              <div class="upload-box" id="imageAudioUploadBox">Upload file</div>
+                              <input type="file" id="imageAudioUpload" class="hidden-input" accept="image/*,audio/*" multiple />
+                            </div>
+                          </div>
                         </div>
-                      </li>
-                      <li>
-                        <div>
-                          <h3>Project 2</h3>
-                          <p>Lorem ipsum laoreet vel sit pretium nulla vitae quis id non curabitur eget ornare ac.</p>
+                        <div class="social-field">
+                          <label for="channels" class="input__label-title">Channels</label>
+
+                          <div class="social-buttons">
+                            <input type="checkbox" id="youtube" name="social" value="youtube" />
+                            <label for="youtube">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" stroke="#C0362E" />
+                                <path
+                                  d="M14.2859 18.5718L18.7344 16.0004L14.2859 13.4289V18.5718ZM24.1944 11.8604C24.3059 12.2632 24.383 12.8032 24.4344 13.4889C24.4944 14.1747 24.5201 14.7661 24.5201 15.2804L24.5716 16.0004C24.5716 17.8775 24.4344 19.2575 24.1944 20.1404C23.9801 20.9118 23.483 21.4089 22.7116 21.6232C22.3087 21.7347 21.5716 21.8118 20.4401 21.8632C19.3259 21.9232 18.3059 21.9489 17.363 21.9489L16.0001 22.0004C12.4087 22.0004 10.1716 21.8632 9.28871 21.6232C8.51728 21.4089 8.02014 20.9118 7.80585 20.1404C7.69443 19.7375 7.61728 19.1975 7.56585 18.5118C7.50585 17.8261 7.48014 17.2347 7.48014 16.7204L7.42871 16.0004C7.42871 14.1232 7.56585 12.7432 7.80585 11.8604C8.02014 11.0889 8.51728 10.5918 9.28871 10.3775C9.69157 10.2661 10.4287 10.1889 11.5601 10.1375C12.6744 10.0775 13.6944 10.0518 14.6373 10.0518L16.0001 10.0004C19.5916 10.0004 21.8287 10.1375 22.7116 10.3775C23.483 10.5918 23.9801 11.0889 24.1944 11.8604Z"
+                                  fill="#C0362E"
+                                />
+                              </svg>
+                            </label>
+
+                            <input type="checkbox" id="tiktok" name="social" value="tiktok" />
+                            <label for="tiktok">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" fill="white" />
+                                <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" stroke="#C0362E" />
+                                <path
+                                  d="M19.5204 11.2705C18.9974 10.6732 18.7091 9.90623 18.7092 9.1123H16.3444V18.6021C16.3265 19.1158 16.1098 19.6024 15.74 19.9594C15.3702 20.3163 14.8762 20.5157 14.3622 20.5154C13.2755 20.5154 12.3724 19.6276 12.3724 18.5256C12.3724 17.2092 13.6429 16.222 14.9515 16.6276V14.2092C12.3112 13.8572 10 15.9082 10 18.5256C10 21.074 12.1122 22.8878 14.3546 22.8878C16.7577 22.8878 18.7092 20.9363 18.7092 18.5256V13.7118C19.6681 14.4005 20.8194 14.7699 22 14.7679V12.4031C22 12.4031 20.5612 12.472 19.5204 11.2705Z"
+                                  fill="#C0362E"
+                                />
+                              </svg>
+                            </label>
+
+                            <input type="checkbox" id="instagram" name="social" value="instagram" />
+                            <label for="instagram">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" stroke="#C0362E" />
+                                <path
+                                  d="M18.6667 10.9379C19.5507 10.9379 20.3986 11.2891 21.0237 11.9142C21.6488 12.5393 22 13.3871 22 14.2712V19.6045C22 20.4886 21.6488 21.3364 21.0237 21.9616C20.3986 22.5867 19.5507 22.9379 18.6667 22.9379H13.3333C12.4493 22.9379 11.6014 22.5867 10.9763 21.9616C10.3512 21.3364 10 20.4886 10 19.6045V14.2712C10 13.3871 10.3512 12.5393 10.9763 11.9142C11.6014 11.2891 12.4493 10.9379 13.3333 10.9379H18.6667ZM16 14.2712C15.2928 14.2712 14.6145 14.5522 14.1144 15.0522C13.6143 15.5523 13.3333 16.2306 13.3333 16.9379C13.3333 17.6451 13.6143 18.3234 14.1144 18.8235C14.6145 19.3236 15.2928 19.6045 16 19.6045C16.7072 19.6045 17.3855 19.3236 17.8856 18.8235C18.3857 18.3234 18.6667 17.6451 18.6667 16.9379C18.6667 16.2306 18.3857 15.5523 17.8856 15.0522C17.3855 14.5522 16.7072 14.2712 16 14.2712ZM16 15.6045C16.3536 15.6045 16.6928 15.745 16.9428 15.9951C17.1929 16.2451 17.3333 16.5842 17.3333 16.9379C17.3333 17.2915 17.1929 17.6306 16.9428 17.8807C16.6928 18.1307 16.3536 18.2712 16 18.2712C15.6464 18.2712 15.3072 18.1307 15.0572 17.8807C14.8071 17.6306 14.6667 17.2915 14.6667 16.9379C14.6667 16.5842 14.8071 16.2451 15.0572 15.9951C15.3072 15.745 15.6464 15.6045 16 15.6045ZM19 13.2712C18.8232 13.2712 18.6536 13.3414 18.5286 13.4665C18.4036 13.5915 18.3333 13.7611 18.3333 13.9379C18.3333 14.1147 18.4036 14.2842 18.5286 14.4093C18.6536 14.5343 18.8232 14.6045 19 14.6045C19.1768 14.6045 19.3464 14.5343 19.4714 14.4093C19.5964 14.2842 19.6667 14.1147 19.6667 13.9379C19.6667 13.7611 19.5964 13.5915 19.4714 13.4665C19.3464 13.3414 19.1768 13.2712 19 13.2712Z"
+                                  fill="#C0362E"
+                                />
+                              </svg>
+                            </label>
+
+                            <input type="checkbox" id="twitter" name="social" value="twitter" />
+                            <label for="twitter">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" stroke="#C0362E" />
+                                <mask id="mask0_145_770" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="4" y="4" width="24" height="24">
+                                  <path d="M4 4H28V28H4V4Z" fill="white" />
+                                </mask>
+                                <g mask="url(#mask0_145_770)">
+                                  <path
+                                    d="M19.8071 10.0005H21.8376L17.402 15.0831L22.6207 22.0005H18.535L15.3326 17.806L11.6724 22.0005H9.63997L14.384 16.5623L9.37988 10.0014H13.5697L16.46 13.8347L19.8071 10.0005ZM19.093 20.7823H20.2185L12.9549 11.1553H11.7481L19.093 20.7823Z"
+                                    fill="#C0362E"
+                                  />
+                                </g>
+                              </svg>
+                            </label>
+                          </div>
                         </div>
-                      </li>
-                      <li>
-                        <div>
-                          <h3>Project 3</h3>
-                          <p>Lorem ipsum laoreet vel sit pretium nulla vitae quis id non curabitur eget ornare ac.</p>
-                        </div>
-                      </li>
-                      <li>New Template</li>
-                    </ul>
+                      </div>
+
+                      <button class="episode__publish-btn">Publish</button>
+                    </div>
                   </div>
                 </div>
                 <!-- Contributors Content ====================== -->
                 <div class="tabs__pane" id="contributors">
-                  <div class="contributors__window" id="">
+                  <div class="contributors__window">
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
                         <li class="breadcrumb__item active" onclick="navigate(0)">Contributors</li>
@@ -602,8 +721,32 @@
                       </div>
                     </div>
                     <div class="invite__btn-wrapper">
-                      <button class="invite-btn">Invite</button>
+                      <button class="invite-btn" onclick="navigateCont(1)">Invite</button>
                     </div>
+                  </div>
+                  <div class="contributors__window">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb__item" onclick="navigateCont(0)">Contributors</li>
+                        <li class="breadcrumb__item active">Invite Contributors</li>
+                      </ol>
+                    </nav>
+                    <div class="window__header">
+                      <h3>Invite Contributor</h3>
+                    </div>
+                    <form class="invite__form">
+                      <div class="invite__form-row">
+                        <div class="invite__form-group">
+                          <input type="text" id="name" required />
+                          <label for="name">Name</label>
+                        </div>
+                        <div class="invite__form-group">
+                          <input type="text" id="phone" required />
+                          <label for="phone">Phone</label>
+                        </div>
+                      </div>
+                      <button type="submit" class="invite__submit-btn">Send Invite</button>
+                    </form>
                   </div>
                 </div>
               </div>

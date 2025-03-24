@@ -364,13 +364,17 @@
   background-position: center;
 }
 
-.templates__window {
+.templates__window,
+.contributors__window,
+.projects__window {
   display: none;
   opacity: 0;
   transform: translateY(5px);
   transition: opacity 0.3s, transform 0.3s;
 }
-.templates__window.active {
+.templates__window.active,
+.contributors__window.active,
+.projects__window.active {
   display: block;
   opacity: 1;
   transform: translateY(0);
@@ -435,7 +439,10 @@
   line-height: 1;
   margin-top: 16px;
 }
-
+.upload__group .upload-box {
+  background-image: url("../images/upload-img.svg");
+  height: 40px;
+}
 .file-list {
   text-align: left;
   display: flex;
@@ -687,6 +694,67 @@ input[type="checkbox"]:checked::before {
   font-weight: 500;
   line-height: 1.2;
 }
+.projects__content .input__row {
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+.projects__content .input-field {
+  gap: 16px;
+  justify-content: space-between;
+}
+.projects__content .or {
+  color: #616161;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+.episode__publish-btn {
+  color: #f3f3f3;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 64px;
+  background: #c0362e;
+  padding: 8px 32px;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 40px;
+}
+.social-field {
+  margin-top: 32px;
+}
+.social-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.social-buttons label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-buttons label img {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.social-buttons input:checked + label svg {
+  fill: #c0362e;
+}
+.social-buttons input:checked + label path {
+  fill: white;
+}
+
+.social-buttons input {
+  display: none;
+}
 /*========================== Contributors Content CSS ==================== */
 .contributors__list {
   display: flex;
@@ -729,5 +797,87 @@ input[type="checkbox"]:checked::before {
   margin: 32px auto 0;
 }
 .invite-btn::before {
+  content: url("../images/plus-1.svg");
+}
+/* ============== Invite contributor screen ============= */
+.invite__submit-btn {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 64px;
+  background: #c0362e;
+  padding: 8px 32px;
+  display: flex;
+  justify-content: center;
+  margin: 32px auto 0;
+}
+.invite__form-row {
+  display: flex;
+  gap: 32px;
+}
+.invite__form-group {
+  position: relative;
+  flex: 1;
+}
+.invite__form-group input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #232323;
+  padding: 5px 0;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+  padding: 16px;
+  border-radius: 0;
+}
+.invite__form-group label {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  color: #878787;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  transition: 0.3s;
+}
+.invite__form-group input:focus + label,
+.invite__form-group input:valid + label {
+  top: 0;
+  font-size: 12px;
+}
+.invite__form-group input:focus-visible {
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid #232323;
+}
+.episodes__list li {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 12px 24px;
+  margin-top: 8px;
+}
+.episodes__list li:nth-child(odd) {
+  background: #f8f6f6;
+  border-radius: 8px;
+  padding: 12px 24px;
+}
+.episode__btn {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 8px;
+  background: #737373;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 32px auto 0;
+  justify-content: center;
+}
+
+.episode__btn::before {
   content: url("../images/plus-1.svg");
 }
