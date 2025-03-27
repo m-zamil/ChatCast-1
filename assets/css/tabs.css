@@ -56,6 +56,31 @@
 .tabs__pane--active {
   display: block;
 }
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .tabs__navigation {
+    width: 100%;
+    border-right: 0;
+    border-bottom: 1px solid #232323;
+    padding-right: 0;
+    padding-bottom: 12px;
+    margin-right: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .tabs__button {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .tabs__content {
+    width: 100%;
+  }
+}
 
 /* =====================  Account Content ===================== */
 .account__content {
@@ -113,7 +138,7 @@
   margin-left: 24px;
 }
 
-/* ================== Plans ============== */
+/* ========= Plans ========= */
 .plans {
   padding: 80px 0 0;
 }
@@ -297,6 +322,18 @@
   }
 }
 /*Overrides*/
+.modal--account .modal__content__wrapper {
+  max-width: 1100px;
+}
+.modal--account .modal__content,
+.modal--plans .modal__content {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+}
+.modal--plans .modal__content__wrapper {
+  max-width: 1200px;
+}
 .modal--plans .plans {
   padding: 20px 0;
 }
@@ -439,7 +476,7 @@
   line-height: 1;
   margin-top: 16px;
 }
-.upload__group .upload-box {
+.projects__content .upload__group .upload-box {
   background-image: url("../images/upload-img.svg");
   height: 40px;
 }
@@ -543,14 +580,15 @@
   font-weight: 500;
   line-height: 1;
 }
-.modal input,
-.modal select {
+.modal--account input,
+.modal--account select {
   font-size: 14px;
   border-radius: 8px;
   border: 1px solid #878787;
   background: #fff;
   padding: 12px;
 }
+
 .modal select {
   appearance: none;
 }
@@ -612,8 +650,8 @@ input[type="checkbox"]:checked::before {
   margin-top: 1px;
 }
 
-.modal input:focus-visible,
-.modal select:focus-visible {
+.modal--account input:focus-visible,
+.modal--account select:focus-visible {
   outline: none;
   border: 1px solid #232323;
   outline: 1px solid #232323;
@@ -621,6 +659,20 @@ input[type="checkbox"]:checked::before {
 @media (max-width: 768px) {
   .modal .input__row {
     grid-auto-flow: row;
+  }
+  .breadcrumb {
+    margin-top: 20px;
+    gap: 10px 0;
+  }
+  .upload__group__wrapper {
+    grid-auto-flow: row;
+  }
+  .templates__lists li {
+    flex: 1 0 100%;
+  }
+  .breadcrumb__item + .breadcrumb__item::before {
+    padding-right: 8px;
+    padding-left: 8px;
   }
 }
 /* ============ Preview ============== */
@@ -755,6 +807,14 @@ input[type="checkbox"]:checked::before {
 .social-buttons input {
   display: none;
 }
+@media (max-width: 768px) {
+  .projects__content .input__row {
+    grid-template-columns: 1fr;
+  }
+  .projects__lists li {
+    flex: 1 0 100%;
+  }
+}
 /*========================== Contributors Content CSS ==================== */
 .contributors__list {
   display: flex;
@@ -799,7 +859,7 @@ input[type="checkbox"]:checked::before {
 .invite-btn::before {
   content: url("../images/plus-1.svg");
 }
-/* ============== Invite contributor screen ============= */
+/* ======= Invite contributor screen ====== */
 .invite__submit-btn {
   font-size: 18px;
   font-weight: 600;

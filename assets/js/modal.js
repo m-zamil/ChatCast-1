@@ -1,5 +1,5 @@
 // Get modal trigger buttons and close buttons
-const openModalButtons = document.querySelectorAll(".openModalButton");
+const openModalButtons = document.querySelectorAll(".open-modal");
 const closeModalButtons = document.querySelectorAll(".closeModalButton");
 let lastFocusedButton = null;
 

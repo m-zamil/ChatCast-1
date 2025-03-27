@@ -63,18 +63,10 @@ textarea,
 button {
   font-family: inherit;
 }
-.flex {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
 
 @media (max-width: 768px) {
   body {
     padding: 20px;
-  }
-  .flex {
-    gap: 8px;
   }
 }
 @media (max-width: 375px) {
@@ -95,11 +87,16 @@ button {
 .navbar a {
   display: inline-block;
 }
-.nav__logo img {
+.navbar__logo img {
   width: 168px;
   height: auto;
 }
-.nav__ctas {
+.navbar__actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.navbar__buttons {
   display: flex;
   gap: 16px;
   align-items: center;
@@ -126,10 +123,10 @@ button {
   color: #f3f3f3;
   background: #232323;
 }
-.nav__avatar {
+.navbar__avatar {
   cursor: pointer;
 }
-.nav__avatar-img {
+.navbar__avatar-img {
   border-radius: 50%;
   height: 48px;
   width: auto;
@@ -140,22 +137,25 @@ button {
   .navbar {
     padding: 8px 12px;
   }
-  .nav__ctas {
+  .navbar__actions {
+    gap: 8px;
+  }
+  .navbar__buttons {
     gap: 6px;
   }
   .nav__cta {
     font-size: 16px;
     padding: 10px 20px;
   }
-  .nav__logo img {
+  .navbar__logo img {
     width: 120px;
   }
-  .nav__avatar-img {
+  .navbar__avatar-img {
     height: 38px;
   }
 }
 @media (max-width: 375px) {
-  .nav__logo img {
+  .navbar__logo img {
     width: 100px;
   }
   .nav__cta {
@@ -267,7 +267,7 @@ button {
     gap: 20px;
   }
 
-  .footer__social {
+  .footer__socials {
     margin-top: 10px;
   }
 }

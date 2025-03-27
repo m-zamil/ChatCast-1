@@ -18,7 +18,7 @@
   font-size: 20px;
   margin: 16px 0;
 }
-.hero__ctas {
+.hero__actions {
   display: flex;
   justify-content: center;
   gap: 16px;
@@ -79,7 +79,7 @@
     font-size: 16px;
     margin: 12px 0;
   }
-  .hero__ctas {
+  .hero__actions {
     gap: 12px;
     margin-top: 20px;
   }

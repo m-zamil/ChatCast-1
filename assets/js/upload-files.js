@@ -24,3 +24,4 @@ function setupUploadBox(uploadBoxId, inputId, previewId) {
 setupUploadBox("imageUploadBox", "imageUpload", "imagePreview");
 setupUploadBox("musicUploadBox", "musicUpload", "musicPreview");
 setupUploadBox("videoUploadBox", "videoUpload", "videoPreview");
+setupUploadBox("imageAudioUploadBox", "imageAudioUpload", "imageAudioPreview");

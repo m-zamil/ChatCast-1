@@ -17,14 +17,16 @@
     <!-- Header -->
     <header class="header">
       <nav class="navbar">
-        <a href="/" class="nav__logo"><img src="./assets/images/logo.svg" width="168" alt="ChatCast logo" /></a>
-        <div class="flex">
-          <div class="nav__ctas">
-            <button class="nav__cta nav__cta--signup openModalButton" data-modal="signupModal">Sign Up</button>
-            <button class="nav__cta nav__cta--signin openModalButton" data-modal="signinModal">Sign In</button>
+        <a href="/" class="navbar__logo"><img src="./assets/images/logo.svg" width="168" alt="ChatCast logo" /></a>
+        <div class="navbar__actions">
+          <div class="navbar__buttons">
+            <button class="nav__cta nav__cta--signup open-modal" data-modal="signupModal">Sign Up</button>
+            <button class="nav__cta nav__cta--signin open-modal" data-modal="signinModal">Sign In</button>
           </div>
-          <div class="avatar__wrapper">
-            <button class="nav__avatar openModalButton" data-modal="accountModal"><img class="nav__avatar-img" src="./assets/images/avatar.png" width="45" height="45" alt="avatar" /></button>
+          <div class="navbar__profile">
+            <button class="navbar__avatar open-modal" data-modal="accountModal">
+              <img class="navbar__avatar-img" src="./assets/images/avatar.png" width="45" height="45" alt="User Avatar" />
+            </button>
           </div>
         </div>
       </nav>
@@ -35,7 +37,7 @@
         <div class="hero__content">
           <h1>Effortless Video Creation for Everyone</h1>
           <p>ChatCast transforms your WhatsApp conversations into professional, interactive media content that engages and inspires.</p>
-          <div class="hero__ctas">
+          <div class="hero__actions">
             <a href="#" class="hero__cta hero__cta--red">Get Srarted</a>
             <a href="#" class="hero__cta hero__cta--black">Contact Us</a>
           </div>
@@ -158,12 +160,10 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="footer__top">
-        <div class="footer__brand">
-          <a href="/" class="footer__logo">
-            <img src="./assets/images/logo.svg" alt="ChatCast Logo" />
-          </a>
-        </div>
-        <nav class="footer__social">
+        <a href="/" class="footer__logo">
+          <img src="./assets/images/logo.svg" alt="ChatCast Logo" />
+        </a>
+        <nav class="footer__socials">
           <ul class="footer__social-list">
             <li class="footer__social-item">
               <a href="#" aria-label="YouTube"><img src="./assets/images/youtube.svg" alt="YouTube" /></a>
@@ -604,7 +604,7 @@
                             <!-- Image Upload -->
                             <div class="upload__group">
                               <label for="imageAudioUpload" class="input__label-title">Image</label>
-                              <div id="imagePreview" class="file-list"></div>
+                              <div id="imageAudioPreview" class="file-list"></div>
                               <div class="upload-box" id="imageAudioUploadBox">Upload file</div>
                               <input type="file" id="imageAudioUpload" class="hidden-input" accept="image/*,audio/*" multiple />
                             </div>
